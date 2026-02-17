@@ -13,4 +13,19 @@ class Movie extends Model
         'runtime',
         'poster_path',
     ];
+    public function users()
+    {
+        return $this->belongsToMany(User::class)
+                    ->withPivot('status')
+                    ->withTimestamps();
+    }
+    // Una película puede estar en muchas colecciones
+public function collections()
+{
+    return $this->belongsToMany(Collection::class);
 }
+public function reviews() {
+    return $this->hasMany(Review::class);
+}
+}
+

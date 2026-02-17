@@ -25,7 +25,14 @@ class User extends Authenticatable
     'profile_photo', 
     'role',
 ];
-
+// Un usuario puede crear muchas colecciones
+public function collections()
+{
+    return $this->hasMany(Collection::class);
+}
+public function reviews() {
+    return $this->hasMany(Review::class);
+}
     /**
      * The attributes that should be hidden for serialization.
      *
