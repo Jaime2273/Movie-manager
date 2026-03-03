@@ -10,7 +10,7 @@ class Review extends Model
         'user_id',
         'movie_id',
         'rating',
-        'content',
+        'comment',
         'is_visible',
     ];
 
@@ -25,4 +25,3 @@ class Review extends Model
         return $this->belongsTo(Movie::class);
     }
 }
-

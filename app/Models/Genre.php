@@ -8,7 +8,7 @@ class Genre extends Model
 {
       protected $fillable = [
         'name',
-        'tmdb_genre_id',
+        'tmdb_id',
     ];
     public function movies()
     {

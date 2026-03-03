@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Movie;
 
 class User extends Authenticatable
 {
@@ -32,6 +33,12 @@ public function collections()
 }
 public function reviews() {
     return $this->hasMany(Review::class);
+}
+public function movies()
+{
+    return $this->belongsToMany(Movie::class)
+                ->withPivot('status')//'pending' o 'watched'
+                ->withTimestamps();
 }
     /**
      * The attributes that should be hidden for serialization.
