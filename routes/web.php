@@ -20,7 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // --- PANEL DE CONTROL ---
-    // (Mantenemos 'verified' si usas verificación de correo)
+    //verified por si usamos la verificación de correo)
     Route::get('/controlPanel', [ControlPanelController::class, 'index'])->middleware('verified')->name('controlPanel');
 
     // --- IMPORTACIÓN DE PELÍCULAS ---
