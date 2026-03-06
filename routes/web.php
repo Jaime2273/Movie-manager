@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/my-movies/{movie}', [MovieController::class, 'destroy'])->name('my.movies.destroy');
     Route::delete('/movies/{movie}/global-delete', [MovieController::class, 'globalDestroy'])->name('movies.global.destroy');
     
-    // --- RESEÑAS (Alojadas en MovieController) ---
+    // --- RESEÑAS ---
     Route::post('/movies/{movie}/review', [MovieController::class, 'storeReview'])->name('movies.review.store');
     Route::post('/reviews/{review}/toggle', [MovieController::class, 'toggleReview'])->name('reviews.toggle');
     Route::post('/movies/{movie}/add-to-collection', [MovieController::class, 'addToCollection'])->name('movies.add-to-collection');

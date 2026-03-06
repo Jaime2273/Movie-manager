@@ -10,7 +10,7 @@
 
             {{-- FILTROS PARA EL DASHBOARD GLOBAL --}}
             <div class="bg-white p-6 rounded-lg shadow-sm mb-6 border border-gray-100">
-                {{-- CAMBIO AQUÍ: La ruta ahora es 'dashboard' --}}
+                
                 <form action="{{ route('dashboard') }}" method="GET" class="space-y-4">
                     <div class="flex flex-wrap gap-4">
                         {{-- Búsqueda por Título --}}
@@ -37,7 +37,7 @@
                         </select>
 
                         {{-- Filtro por Estado (Personal) --}}
-                        {{-- Nota: Tu controlador dashboard ya soporta filtrar por tu estado personal --}}
+                        
                         <select name="status"
                             class="rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 text-sm">
                             <option value="">My Status</option>
@@ -58,7 +58,7 @@
 
                         <x-primary-button>Apply Filters</x-primary-button>
 
-                        {{-- CAMBIO AQUÍ: El enlace de limpiar también apunta a 'dashboard' --}}
+                
                         <a href="{{ route('dashboard') }}"
                             class="text-xs text-red-500 self-center hover:underline">Clear</a>
                     </div>
@@ -87,8 +87,6 @@
                                     title="{{ $movie->title }}">
                                     {{ $movie->title }}
                                 </h4>
-
-                                {{-- COMPROBACIÓN DIRECTA DEL ESTADO SIN BLOQUE PHP --}}
                                 <div class="mt-2">
                                     @if($movie->users->first()?->pivot->status == 'watched')
                                         <span
